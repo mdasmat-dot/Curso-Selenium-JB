@@ -1,4 +1,4 @@
-# Automatizacion e2e
+# Automatizacion E2E Web con Python, Selenium y Pytest
 ## Estructura
 -tests/: casos de prueba
 -pages/: Page Objects

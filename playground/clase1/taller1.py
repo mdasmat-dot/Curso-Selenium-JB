@@ -7,8 +7,7 @@ is_valid= True
 print("Hola mundo "+ username)
 print(f"Ejecutando login con usuario: {username}") # f-strings
 #Listas
-users= ["standard_user", "locked_out_user",
-"problem_user"]
+users= ["standard_user", "locked_out_user","problem_user"]
 print(users[0])
 print(users[1])
  #Diccionarios
