@@ -34,10 +34,10 @@ def test_login_usando_fixture(usuario_valido):
     assert mensaje == "Bienvenido al panel principal" 
  
 def test_busqueda_usando_fixture(productos_demo): 
-    resultados = buscar_producto(productos_demo, 
-"mouse") 
+    resultados = buscar_producto(productos_demo,"mouse") 
  
     assert resultados[0] == "Mouse Logitech" 
+
 def test_carrito_usando_fixture(carrito_vacio): 
     carrito = agregar_al_carrito(carrito_vacio, "Laptop Lenovo") 
  
@@ -82,7 +82,7 @@ def datos_login_class():
     print("Fixture class ejecutada") 
  
     return { 
- "usuario": "admin", 
+        "usuario": "admin", 
         "clave": "123456" 
     } 
  
@@ -114,8 +114,6 @@ def datos_session():
  
     return "Curso Selenium con Pytest" 
  
- 
- www.jbenterprisegroup.com 
 def test_scope_session(datos_session): 
     assert "Pytest" in datos_session 
  
@@ -139,4 +137,4 @@ def test_regression_busqueda(productos_demo):
 def test_critical_carrito(carrito_vacio): 
     carrito = agregar_al_carrito(carrito_vacio, "Mouse Logitech") 
  
-    assert obtener_mensaje_carrito(carrito) == "El pytetscarrito tiene 1 producto" 
+    assert obtener_mensaje_carrito(carrito) == "El carrito tiene 1 producto" 
