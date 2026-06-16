@@ -34,6 +34,12 @@ class InventoryPage:
         select = Select(select_element)
         select.select_by_value(valor)
         time.sleep(1)
+        productos = self.driver.find_elements(*self.PRODUCTOS)
+
+        for i, producto in enumerate(productos):
+            nombre = producto.find_element(*self.PRODUCT_NAME).text
+
+        logger.info(f"Posición {i}: {nombre}")
 
     def obtener_producto_por_indice(self, indice):
 
@@ -62,6 +68,9 @@ class InventoryPage:
 
         logger.info(f"Botón encontrado: {boton.text}" )
 
+        logger.info(f"Indice recibido: {indice}")
+
+        logger.info(f"Producto seleccionado: {nombre}")
         
         self.driver.execute_script("arguments[0].click();",boton)
 
