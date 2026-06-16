@@ -11,7 +11,10 @@ class InventoryPage:
 
     PRODUCT_NAME = ( By.CLASS_NAME, "inventory_item_name")
 
-    ADD_BUTTON = ( By.TAG_NAME,"button")
+    #ADD_BUTTON = ( By.TAG_NAME,"button")
+
+    #Localizador mas especifico para el boton de agregar al carrito, buscando el boton dentro del producto especifico
+    ADD_BUTTON = (By.XPATH,".//button[contains(@id,'add-to-cart')]")
 
     CART_BADGE = (By.CLASS_NAME,"shopping_cart_badge" )
 
@@ -45,9 +48,16 @@ class InventoryPage:
 
         return nombre
 
+    #def obtener_cantidad_carrito(self):
+
+        #return self.wait.until(EC.visibility_of_element_located( self.CART_BADGE) ).text
+
+    #Metodo mejorado para obtener la cantidad del carrito, manejando el caso donde el carrito esta vacio y no se muestra el badge
+
     def obtener_cantidad_carrito(self):
 
-        return self.wait.until(EC.visibility_of_element_located( self.CART_BADGE) ).text
+        badge = self.wait.until(EC.presence_of_element_located(self.CART_BADGE))
+        return badge.text
 
     def abrir_carrito(self):
 
