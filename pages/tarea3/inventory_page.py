@@ -33,6 +33,7 @@ class InventoryPage:
         select_element = self.wait.until(EC.visibility_of_element_located(self.SORT_SELECT) )
         select = Select(select_element)
         select.select_by_value(valor)
+        time.sleep(1)
 
     def obtener_producto_por_indice(self, indice):
 
