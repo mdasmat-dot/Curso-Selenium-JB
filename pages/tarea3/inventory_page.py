@@ -3,6 +3,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import logging
+import time
+
 logger = logging.getLogger(__name__)
 
 class InventoryPage:
@@ -59,9 +61,13 @@ class InventoryPage:
 
         logger.info(f"Botón encontrado: {boton.text}" )
 
-        #boton.click()
+        
         self.driver.execute_script("arguments[0].click();",boton)
-                                   
+
+        time.sleep(1)
+
+        logger.info(f"Texto después click: {boton.text}")
+                                           
         logger.info(f"URL después del click: {self.driver.current_url}")
 
 
