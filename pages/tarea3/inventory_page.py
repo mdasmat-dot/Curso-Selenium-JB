@@ -66,8 +66,6 @@ class InventoryPage:
 
         time.sleep(1)
 
-        logger.info(f"Texto después click: {boton.text}")
-                                           
         logger.info(f"URL después del click: {self.driver.current_url}")
 
 
