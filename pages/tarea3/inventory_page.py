@@ -15,8 +15,7 @@ class InventoryPage:
 
     PRODUCT_NAME = ( By.CLASS_NAME, "inventory_item_name")
 
-   
-    #Localizador mas especifico para el boton de agregar al carrito, buscando el boton dentro del producto especifico
+       #Localizador mas especifico para el boton de agregar al carrito, buscando el boton dentro del producto especifico
     ADD_BUTTON = (By.XPATH,".//button[contains(@id,'add-to-cart')]"
 )
 
@@ -71,7 +70,9 @@ class InventoryPage:
         logger.info(f"Indice recibido: {indice}")
 
         logger.info(f"Producto seleccionado: {nombre}")
-        
+
+        logger.info( f"ID botón: {boton.get_attribute('id')}")
+                
         self.driver.execute_script("arguments[0].click();",boton)
 
         time.sleep(1)
