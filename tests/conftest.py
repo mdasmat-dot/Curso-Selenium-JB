@@ -1,16 +1,22 @@
 import pytest 
 from selenium import webdriver 
+from selenium.webdriver.chrome.options import Options
  
 from pages.clase5.login_page import LoginPage 
 from pages.clase5.inventory_page import InventoryPage 
-
 from pages.clase5.alerts_page import AlertsPage 
 from pages.clase5.upload_page import UploadPage 
+
+#Navegacion Headless para pruebas sin interfaz grafica, ideal para integracion continua y ejecucion rapida de pruebas.
  
 @pytest.fixture 
 def driver(): 
-    navegador = webdriver.Edge() 
-    navegador.maximize_window() 
+    chrome_options = Options()
+    chrome_options.add_argument("--headless=new")
+    chrome_options.add_argument("--window-size=1920,1080")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    navegador = webdriver.Chrome(options=chrome_options)
  
     yield navegador 
  
@@ -18,7 +24,12 @@ def driver():
  
 @pytest.fixture(scope="class") 
 def driver_class(): 
-    navegador = webdriver.Edge() 
+    chrome_options = Options()
+    chrome_options.add_argument("--headless=new")
+    chrome_options.add_argument("--window-size=1920,1080")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    navegador = webdriver.Chrome(options=chrome_options)
     navegador.maximize_window() 
  
     yield navegador 
