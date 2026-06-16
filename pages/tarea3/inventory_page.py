@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import logging
+logger = logging.getLogger(__name__)
 
 class InventoryPage:
 
@@ -38,15 +40,29 @@ class InventoryPage:
 
         return productos[indice]
 
+    #def agregar_producto_por_indice(self, indice):
+
+        #producto = self.obtener_producto_por_indice(indice)
+
+        #nombre = producto.find_element(*self.PRODUCT_NAME).text
+
+        #producto.find_element(*self.ADD_BUTTON).click()
+
+        #return nombre
+
     def agregar_producto_por_indice(self, indice):
 
         producto = self.obtener_producto_por_indice(indice)
 
         nombre = producto.find_element(*self.PRODUCT_NAME).text
+        boton = producto.find_element(*self.ADD_BUTTON)
 
-        producto.find_element(*self.ADD_BUTTON).click()
+        logger.info(f"Botón encontrado: {boton.text}" )
 
-        return nombre
+        boton.click()
+
+        logger.info(f"URL después del click: {self.driver.current_url}")
+
 
     #def obtener_cantidad_carrito(self):
 
