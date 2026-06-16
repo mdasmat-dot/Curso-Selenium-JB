@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7249","test_integrador[orden_az_agregar_tercer_producto]","tests.integrador","2026-06-15","passed","2026-06-15","","Integrador Final","",""
+"","6712","test_integrador[orden_hilo_agregar_primer_producto]","tests.integrador","2026-06-15","passed","2026-06-15","","Integrador Final","",""
+"","8845","test_integrador[orden_lohi_agregar_primer_producto]","tests.integrador","2026-06-15","passed","2026-06-15","","Integrador Final","",""
+"","5791","test_integrador[caso_forzado_error]","tests.integrador","2026-06-15","failed","2026-06-15","","Integrador Final","",""

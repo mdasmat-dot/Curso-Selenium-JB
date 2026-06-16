@@ -1,0 +1,2 @@
+assert False
+ +  where False = textos_son_iguales('Sauce Labs Backpack', 'Producto Incorrecto')

@@ -1,0 +1,3 @@
+[32mINFO    [0m test_integrador:test_integrador.py:48 Ejecutando caso_forzado_error
+[1m[31mERROR   [0m test_integrador:test_integrador.py:105 assert False
+ +  where False = textos_son_iguales('Sauce Labs Backpack', 'Producto Incorrecto')

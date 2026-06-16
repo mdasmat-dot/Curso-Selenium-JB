@@ -1,0 +1,1 @@
+[32mINFO    [0m test_integrador:test_integrador.py:48 Ejecutando orden_lohi_agregar_primer_producto
