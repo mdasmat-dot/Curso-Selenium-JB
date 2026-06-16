@@ -1,2 +1,5 @@
 pytest
 selenium
+pytest-xdist
+allure-pytest
+pytest-co
