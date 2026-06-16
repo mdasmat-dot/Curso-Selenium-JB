@@ -15,7 +15,7 @@ class InventoryPage:
 
     #Localizador mas especifico para el boton de agregar al carrito, buscando el boton dentro del producto especifico
     ADD_BUTTON = (By.CSS_SELECTOR,"button.btn_inventory")
-    
+
     CART_BADGE = (By.CLASS_NAME,"shopping_cart_badge" )
 
     CART_LINK = ( By.CLASS_NAME, "shopping_cart_link")
@@ -44,7 +44,7 @@ class InventoryPage:
 
         nombre = producto.find_element(*self.PRODUCT_NAME).text
 
-        producto.find_element(*self.ADD_BUTTON).click()
+        producto.find_element(EC.element_to_be_clickable(self.ADD_BUTTON)).click()
 
         return nombre
 
