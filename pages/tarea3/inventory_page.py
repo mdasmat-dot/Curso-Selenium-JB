@@ -72,12 +72,16 @@ class InventoryPage:
         logger.info(f"Producto seleccionado: {nombre}")
 
         logger.info( f"ID botón: {boton.get_attribute('id')}")
-                
+
         self.driver.execute_script("arguments[0].click();",boton)
 
         time.sleep(1)
 
-        logger.info(f"URL después del click: {self.driver.current_url}")
+        logger.info(f"Cantidad carrito: {self.obtener_cantidad_carrito()}")
+
+        nuevo_texto = producto.find_element(*self.ADD_BUTTON).text
+
+        logger.info(f"Texto botón después click: {nuevo_texto}")
 
 
     #def obtener_cantidad_carrito(self):
