@@ -59,8 +59,9 @@ class InventoryPage:
 
         logger.info(f"Botón encontrado: {boton.text}" )
 
-        boton.click()
-
+        #boton.click()
+        self.driver.execute_script("arguments[0].click();",boton)
+                                   
         logger.info(f"URL después del click: {self.driver.current_url}")
 
 
