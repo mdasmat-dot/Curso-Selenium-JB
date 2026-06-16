@@ -1,7 +1,9 @@
 name: E2E Pytest Selenium Allure
 on:
   push:
-    branches: ["main"]
+    branches: 
+      - main
+      - alumno/mdasmat
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
