@@ -14,8 +14,8 @@ class InventoryPage:
     #ADD_BUTTON = ( By.TAG_NAME,"button")
 
     #Localizador mas especifico para el boton de agregar al carrito, buscando el boton dentro del producto especifico
-    ADD_BUTTON = (By.XPATH,".//button[contains(@id,'add-to-cart')]")
-
+    ADD_BUTTON = (By.CSS_SELECTOR,"button.btn_inventory")
+    
     CART_BADGE = (By.CLASS_NAME,"shopping_cart_badge" )
 
     CART_LINK = ( By.CLASS_NAME, "shopping_cart_link")
