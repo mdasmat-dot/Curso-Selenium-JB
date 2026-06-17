@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 class InventoryPage:
 
-    SORT_SELECT = (By.XPATH,"//*[@id="header_container"]/div[2]/div/span/select")
+    SORT_SELECT = (By.XPATH, "//*[@id='header_container']/div[2]/div/span/select")
 
     PRODUCTOS = ( By.CSS_SELECTOR, "div[data-test='inventory-item-name']")
 
