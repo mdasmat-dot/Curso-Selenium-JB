@@ -18,7 +18,7 @@ class InventoryPage:
        #Localizador mas especifico para el boton de agregar al carrito, buscando el boton dentro del producto especifico
     ADD_BUTTON = (By.CSS_SELECTOR,"button.btn_inventory")
 
-    CART_BADGE = (By.Id,"shopping_cart_container" )
+    CART_BADGE = (By.ID,"shopping_cart_container" )
 
     CART_LINK = ( By.CLASS_NAME, "shopping_cart_link")
 
