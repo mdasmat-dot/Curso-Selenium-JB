@@ -11,14 +11,14 @@ class InventoryPage:
 
     SORT_SELECT = (By.XPATH, "//*[@id='header_container']/div[2]/div/span/select")
 
-    PRODUCTOS = ( By.CSS_SELECTOR, "div[data-test='inventory-item-name']")
+    PRODUCTOS = ( By.CSS_SELECTOR, ".inventory_item")
 
     PRODUCT_NAME = ( By.CLASS_NAME, "inventory_item_name")
 
        #Localizador mas especifico para el boton de agregar al carrito, buscando el boton dentro del producto especifico
     ADD_BUTTON = (By.CSS_SELECTOR,"button.btn_inventory")
 
-    CART_BADGE = (By.ID,"shopping_cart_container" )
+    CART_BADGE = (By.CLASS_NAME,"shopping_cart_badge")
 
     CART_LINK = ( By.CLASS_NAME, "shopping_cart_link")
 
@@ -37,7 +37,7 @@ class InventoryPage:
         for i, producto in enumerate(productos):
             nombre = producto.find_element(*self.PRODUCT_NAME).text
 
-        logger.info(f"Posición {i}: {nombre}")
+            logger.info(f"Posición {i}: {nombre}")
 
     def obtener_producto_por_indice(self, indice):
 
@@ -81,6 +81,8 @@ class InventoryPage:
         nuevo_texto = producto.find_element(*self.ADD_BUTTON).text
 
         logger.info(f"Texto botón después click: {nuevo_texto}")
+
+        return nombre
 
 
     #def obtener_cantidad_carrito(self):
