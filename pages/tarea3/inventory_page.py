@@ -97,5 +97,5 @@ class InventoryPage:
         return badge.text
 
     def abrir_carrito(self):
-
-        self.wait.until(EC.element_to_be_clickable(self.CART_LINK) ).click()
+        link = self.wait.until(EC.presence_of_element_located(self.CART_LINK))
+        self.driver.execute_script("arguments[0].click();", link)

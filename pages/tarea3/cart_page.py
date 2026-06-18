@@ -13,15 +13,10 @@ class CartPage:
         self.wait = WebDriverWait(driver, 10)
 
     def obtener_producto(self):
-
+        # Asegura que el navegador haya terminado de cargar la página del carrito
+        self.wait.until(EC.url_contains("cart.html"))
         return self.wait.until(EC.visibility_of_element_located(self.ITEM_NAME)).text
-    
-        logger.info(f"Cantidad productos encontrados: {len(productos)}")
-
-        for i, p in enumerate(productos):
-            logger.info(f"Producto {i}: {p.text}")
-            return productos[0].text
 
     def checkout(self):
-
-        self.wait.until(EC.element_to_be_clickable(self.CHECKOUT_BUTTON)).click()
+        btn = self.wait.until(EC.presence_of_element_located(self.CHECKOUT_BUTTON))
+        self.driver.execute_script("arguments[0].click();", btn)

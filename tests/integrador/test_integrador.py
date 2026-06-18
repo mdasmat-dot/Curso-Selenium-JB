@@ -39,6 +39,9 @@ datos = leer_json(
 )
 def test_integrador(driver, caso):
 
+    if caso["caso"] == "caso_forzado_error":
+        pytest.xfail("Este caso esta disenado para fallar como prueba de captura de evidencias")
+
     try:
 
         login = LoginPage(driver)

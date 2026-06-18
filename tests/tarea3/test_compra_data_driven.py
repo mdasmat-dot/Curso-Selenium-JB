@@ -1,6 +1,8 @@
 import logging
 import pytest
 import time
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from helpers.data_helper import leer_json
 from helpers.screenshot_helper import guardar_captura
@@ -22,6 +24,9 @@ datos = leer_json("data/tarea3/inventario.json")
 
 def test_compra_data_driven(driver,caso):
 
+    if caso["caso"] == "caso_forzado_error":
+        pytest.xfail("Este caso esta disenado para fallar como prueba de captura de evidencias")
+
     login = LoginPage(driver)
     inventory = InventoryPage(driver)
     cart = CartPage(driver)
@@ -37,6 +42,7 @@ def test_compra_data_driven(driver,caso):
 
     guardar_captura(driver,caso["caso"] )
 
+    WebDriverWait(driver, 10).until(EC.url_contains("inventory"))
     assert "inventory" in driver.current_url
 
     inventory.ordenar(caso["orden"])

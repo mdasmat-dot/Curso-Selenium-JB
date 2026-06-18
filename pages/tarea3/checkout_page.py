@@ -23,9 +23,7 @@ class CheckoutPage:
         self.wait.until(EC.visibility_of_element_located(self.POSTAL)).send_keys(codigo)
 
     def continuar(self):
-
         self.wait.until(EC.element_to_be_clickable(self.CONTINUE)).click()
 
     def finalizar(self):
-
         self.wait.until(EC.element_to_be_clickable(self.FINISH)).click()
