@@ -14,7 +14,7 @@ class CartPage:
 
     def obtener_producto(self):
 
-        return self.driver.find_element(*self.ITEM_NAME).text
+        return self.wait.until(EC.visibility_of_element_located(self.ITEM_NAME)).text
     
         logger.info(f"Cantidad productos encontrados: {len(productos)}")
 

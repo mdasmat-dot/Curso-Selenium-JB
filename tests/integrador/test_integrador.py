@@ -1,6 +1,8 @@
 import logging
 import pytest
 import allure
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from helpers.tarea3.data_helper import leer_json
 from helpers.tarea3.screenshot_helper import guardar_captura
@@ -55,6 +57,8 @@ def test_integrador(driver, caso):
             )
 
         with allure.step("Validar inventario"):
+            WebDriverWait(driver, 10).until(EC.url_contains("inventory"))
+                   
             assert "inventory" in driver.current_url
 
         with allure.step("Ordenar productos"):
